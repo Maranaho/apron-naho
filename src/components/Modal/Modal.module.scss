@@ -1,5 +1,21 @@
 @use '../../styles/tokens.scss' as *;
 
+@keyframes fadeIn {
+    from {background: rgba(0,0,0,0)}
+    to {background: $modalBG;}
+}
+
+@keyframes moveY {
+    from {
+        transform: translateY(5px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .ModalCtn{
     position: fixed;
     inset: 0px;
@@ -9,6 +25,7 @@
     box-sizing: border-box;
     padding: $appPadding;
     align-items: flex-start;
+    animation: fadeIn 1s ease;
 }
 
 .Modal {
@@ -19,6 +36,9 @@
     padding: $modalPadding;
     box-sizing: border-box;
     box-shadow: $modalShadow;
+    transform: translateY(5px);
+    opacity: 0;
+    animation: moveY .5s cubic-bezier(0.41, 0.11, 0.05, 0.96) forwards;
 }
 
 .closeBtn {
