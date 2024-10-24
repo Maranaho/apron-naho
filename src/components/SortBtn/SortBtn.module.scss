@@ -1,0 +1,15 @@
+@use '../../styles/tokens.scss' as *;
+.SortBtn{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    span {
+        color: $sortTextColor;
+        text-decoration: none;
+        padding: 8px 0;
+        font-weight: 300;
+        font-size: 1.1em;
+    }
+    
+}

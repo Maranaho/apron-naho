@@ -1,0 +1,16 @@
+@use '../../styles/tokens.scss' as *;
+
+.Chat {
+    position: fixed; 
+    bottom: 20px;
+    right: 20px;
+    padding:10px;
+    background: #fff;
+    border: none;
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+    box-sizing: border-box;
+    box-shadow: $chathadow;
+    img{width: 30px}
+}

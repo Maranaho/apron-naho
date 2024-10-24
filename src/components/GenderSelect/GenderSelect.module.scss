@@ -1,0 +1,44 @@
+@use '../../styles/tokens.scss' as *;
+
+.GenderSelect{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    span {
+        color: $colorNegative;
+        margin-top: 10px;
+    }
+    label {
+        color: $labelTextColor;
+        padding: 8px 0;
+    }
+    select {
+        padding: $inputPadding;
+        border: $inputBorder;
+        border-radius: $inputRadius;
+        appearance: none; /* Remove default arrow */
+        -webkit-appearance: none; /* For Safari */
+        -moz-appearance: none; /* For Firefox */
+        &.error{
+            outline: $inputErrorOutline;
+            border: $inputBorderError;
+        }
+        &:focus:not(.error){
+            outline: $inputOutline;
+            border: $inputBorderFocus;
+        }
+    }
+
+    &:after {
+        content:"";
+        display: block;
+        width: 16px;
+        height: 16px;
+        background: url("../../assets/svg/caret.svg");
+        position: absolute;
+        top: 50px;
+        right: 20px;
+    }
+}

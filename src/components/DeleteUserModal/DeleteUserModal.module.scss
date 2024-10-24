@@ -1,0 +1,31 @@
+@use '../../styles/tokens.scss' as *;
+
+
+.DeleteUserModal {
+    padding: 10px 30px;
+    h1{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+        button,a{
+            padding: 20px;
+            border-radius: 20px;
+            font-weight: 900;
+            display: flex;
+            justify-content: center;
+            font-family: $dmFontReg;
+            font-size: 1.4em;
+            text-transform: uppercase;
+        }
+        button {
+            background: $colorNegative;
+            border: none;
+            color: #fff;
+        }
+    }
+}

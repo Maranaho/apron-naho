@@ -1,0 +1,28 @@
+@use '../../styles/tokens.scss' as *;
+
+.ModalCtn{
+    position: fixed;
+    inset: 0px;
+    background: $modalBG;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: $appPadding;
+    align-items: flex-start;
+}
+
+.Modal {
+    position: relative;
+    background: #fff;
+    width: $modalWidth;
+    border-radius: $modalRadius;
+    padding: $modalPadding;
+    box-sizing: border-box;
+    box-shadow: $modalShadow;
+}
+
+.closeBtn {
+    position: absolute;
+    top: $closeBtnPosition;
+    right: $closeBtnPosition;
+}

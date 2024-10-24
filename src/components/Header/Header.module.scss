@@ -1,0 +1,13 @@
+@use '../../styles/tokens.scss' as *;
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $appPadding;
+}
+
+.logo {
+    cursor: pointer;
+    &:hover{ opacity: .6 }
+}

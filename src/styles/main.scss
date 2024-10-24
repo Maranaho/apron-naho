@@ -1,0 +1,61 @@
+@use './tokens' as *;
+
+//Google Font
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap');
+
+// Main styles
+body {
+    margin:0;
+    background: $bgColor;
+    font-family: $dmFontReg;
+    font-weight: $fontWeightReg;
+    font-style: normal;
+    font-size: $fontSizeReg;
+    > #app {
+        display: flex;
+        padding-bottom: $mainPadding;
+        box-sizing: border-box;
+        
+    }
+}
+.btn,
+button{
+    cursor: pointer;
+    &:hover{ opacity: .6}
+}
+.btn {
+    text-decoration: none;
+    font-family: $dmFontReg;
+    padding: $btnPadding;
+    border-radius: $btnRadius;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $btnGap;
+    &.primary {
+        border: $btnBorderPrimary;
+        background: $btnBgPrimary;
+        color: $btnTxtColorPrimary;
+    }
+    &.secondary {
+        border: $btnBorderSecondary;
+        background: $btnBgSecondary;
+        color: $btnTxtColorSecondary;
+        &:hover {
+            border: $btnBorderSecondaryHover;
+        }
+    }
+}
+
+h1 {
+    font-size: 1.7em;
+    font-weight: 600;
+    margin: 0;
+}
+
+th{
+    text-align: left;
+    padding: 30px 0;
+    background: #fff;
+}
+td { border-top: $rowBorderWidth solid $borderColor }

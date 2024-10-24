@@ -1,0 +1,54 @@
+//Colors
+$bgColor: #faf9f2;
+$borderColor: #e3e2d9;
+$borderColorHover: #bcbbb3;
+$colorNegative: #E57171;
+
+//Buttons
+$btnPadding: 7px 15px;
+$btnRadius: 50px;
+$btnBorderWidth: 2px;
+$btnGap: 10px;
+$btnBgPrimary: #000;
+$btnBgSecondary: transparent;
+$btnTxtColorPrimary: #fff;
+$btnBorderPrimary: $btnBorderWidth solid $btnBgPrimary;
+$btnTxtColorSecondary: #000;
+$btnBorderSecondary: $btnBorderWidth solid $borderColor;
+$btnBorderSecondaryHover: $btnBorderWidth solid $borderColorHover;
+
+//Dimensions
+$maxAppWidth: 1280px;
+$mainPadding: 50px;
+$appPadding: $mainPadding 0;
+
+//font
+$fontSizeReg:14px;
+$fontWeightReg: 300;
+$dmFontReg: "DM Sans", sans-serif;
+
+//Modal
+$modalBG: rgba(0,0,0,.7);
+$modalWidth: 512px;
+$modalRadius: 16px;
+$modalPadding: 30px;
+$modalShadow: 0px 20px 80px 0px rgba(0,0,0,.7);
+$chathadow: 0px 10px 40px 0px #d1cfbab3;
+$closeBtnPosition: 20px;
+
+//Table
+$rowBorderWidth: 1px;
+
+//Form
+$focusColor: #d7f4b7;
+$labelTextColor: #706D5C;
+$inputPadding:14px;
+$inputBorder: 2px solid $borderColor;
+$inputRadius: 12px;
+$inputOutline: 1px solid $focusColor;
+$inputBorderFocus: 2px solid $focusColor;
+$inputErrorOutline: 1px solid $colorNegative;
+$inputBorderError: 2px solid $colorNegative;
+
+//Sort
+$sortTextColor: #9b9991;

@@ -1,0 +1,13 @@
+.FormActions {
+    display: flex;
+    gap: 5px;
+    padding: 10px 0;
+    button,a{
+        border-radius: 10px;
+        padding: 10px 30px;
+    }
+    button {
+        flex:1;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,29 @@
+@use '../../styles/tokens.scss' as *;
+
+.Input{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    span {
+        color: $colorNegative;
+        margin-top: 10px;
+    }
+    label {
+        color: $labelTextColor;
+        padding: 8px 0;
+    }
+    input {
+        padding: $inputPadding;
+        border: $inputBorder;
+        border-radius: $inputRadius;
+        &.error{
+            outline: $inputErrorOutline;
+            border: $inputBorderError;
+        }
+        &:focus:not(.error){
+            outline: $inputOutline;
+            border: $inputBorderFocus;
+        }
+    }
+}

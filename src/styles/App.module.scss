@@ -1,0 +1,7 @@
+@use './tokens' as *;
+
+.App{
+    max-width: $maxAppWidth;
+    flex:1;
+    margin: 0 auto;
+}
