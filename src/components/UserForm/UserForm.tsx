@@ -42,8 +42,6 @@ const UserForm: FC<UserFormProps> = ({ existingUser, onSubmit }) => {
 
     // Custom submit handler to convert form values to User type
     const handleFormSubmit = (data: UserFormValues) => { 
-        // console.log({data,existingUser});
-        //[...initialUsers]
         
         const user: User = {
             id: existingUser ? existingUser.id : '',

@@ -1,4 +1,4 @@
-import { User,Gender } from './types/userTypes'
+import { User,Gender } from '../types/userTypes'
 import { v4 as uid } from 'uuid'
 
 const initialUsers: User[] = [

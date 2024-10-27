@@ -21,12 +21,9 @@ const User: FC = () => {
         return () => clearTimeout(wait)
     }, [])
 
+    if(loading) return <p>Loading...</p>
+    return <UserTable />
 
-    return (
-        <>
-            {loading ? <p>Loading...</p> : <UserTable />}
-        </>
-    )
 }
 
 export default User

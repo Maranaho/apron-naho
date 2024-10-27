@@ -1,0 +1,25 @@
+@use '../../styles/tokens' as *;
+
+.Notification{
+    position: fixed;
+    top: -60px;
+    right: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    span {
+        transform: translateY(0);
+        transition: .7s cubic-bezier(0.62, 0.03, 0.05, 0.99);
+        font-family: $dmFontReg;
+        font-weight: 500;
+        background: #000;
+        color: #fff;
+        margin: 0;
+        padding: 20px 40px;
+        border-radius: 10px;
+        &.show{
+            margin: 20px 0;
+            transform: translateY(100%);
+        }
+    }
+}

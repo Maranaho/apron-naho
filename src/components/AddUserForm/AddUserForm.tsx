@@ -1,17 +1,20 @@
-import { FC, useEffect, useState } from "react"
+import { FC, useEffect, useState, useContext } from "react"
 import UserForm from "../UserForm/UserForm"
 import useAddUser from "../../hooks/useAddUser"
 import useEditUser from "../../hooks/useEditUser"
 import { User, UserFormValues } from "../../types/userTypes"
-import { useParams, useNavigate } from "react-router-dom"
-import initialUsers from "../../data"
+import { useParams } from "react-router-dom"
+import { UsersContext } from "../../context"
+import { useNavigate } from "react-router-dom"
+import initialUsers from "../../data/data"
 
 const AddUserForm: FC = () => {
+    const navigate = useNavigate()
+    const { dispatch } = useContext(UsersContext)
     const { userid } = useParams<{ userid: string | undefined }>()
     const { mutate: addUser } = useAddUser()
     const { mutate: editUser } = useEditUser()
     const [userData, setUserData] = useState<User | undefined>(undefined)
-    const navigate = useNavigate()
 
     // Handle form submission
     const handleFormSubmit = (data: UserFormValues) => {
@@ -25,8 +28,12 @@ const AddUserForm: FC = () => {
         // Edit existing or add new user depending on userData
         if (userData) editUser({ id: userData.id, updatedData: userPayload })
         else addUser(userPayload)
-
+        
         navigate("/")
+        dispatch && dispatch({type:"SHOW_NOTIFICATION",payload: {
+            edit:!!userData,
+            name:data.firstName,
+        }})
     }
 
     // Fetch user data if in edit mode

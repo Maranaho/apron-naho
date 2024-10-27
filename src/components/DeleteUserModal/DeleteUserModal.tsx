@@ -1,11 +1,13 @@
-import { FC, useEffect, useState } from "react"
+import { FC, useEffect, useState,useContext } from "react"
 import useDeleteUser from "../../hooks/useDeleteUser"
 import { User } from "../../types/userTypes"
 import { useParams, useNavigate, Link } from "react-router-dom"
-import initialUsers from "../../data" 
+import { UsersContext } from "../../context"
+import initialUsers from "../../data/data" 
 import styles from "./DeleteUserModal.module.scss"
 
 const DeleteUserModal: FC = () => {
+    const { dispatch } = useContext(UsersContext)
     const navigate = useNavigate()
     const { userid } = useParams<{ userid: string | undefined }>()
     const { mutate: deleteUser } = useDeleteUser()
@@ -25,6 +27,7 @@ const DeleteUserModal: FC = () => {
 
     const handleDelete = (): void => {
         if (userid) {
+            dispatch && dispatch({type:"SET_USER_DELETED",payload: true})
             deleteUser(userid)
             navigate("/")
         }

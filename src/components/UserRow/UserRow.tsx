@@ -4,22 +4,22 @@ import { Link } from "react-router-dom"
 import deleteIcon from "../../assets/svg/trash.svg"
 import styles from "./UserRow.module.scss"
 
-interface UserRowProps { user: User }
+interface UserRowProps { user: User,hide?:boolean }
 
-const UserRow: FC<UserRowProps> = ({ user }) => {
+const UserRow: FC<UserRowProps> = ({ user,hide }) => {
     const {
         id,
         firstName,
         lastName,
         age,
-        gender,
+        gender
     } = user
     return (
-        <tr>
-            <td>{gender}</td>
-            <td>{firstName}</td>
-            <td>{lastName}</td>
-            <td>{age}</td>
+        <tr className={`row ${hide ? styles.hide : ""}`}>
+            <td><div>{gender}</div></td>
+            <td><div>{firstName}</div></td>
+            <td><div>{lastName}</div></td>
+            <td><div>{age}</div></td>
             <td>
                 <div className={styles.actions}>
                     <Link

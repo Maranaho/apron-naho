@@ -1,5 +1,5 @@
 import { Gender, User, UID } from "../types/userTypes"
-import initialUsers from "../data"
+import initialUsers from "../data/data"
 import { v4 as uid } from "uuid"
 import persist from "../utils/persist"
 

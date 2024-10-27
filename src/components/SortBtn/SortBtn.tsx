@@ -1,31 +1,27 @@
-import { FC } from 'react'
+import { FC,useContext } from 'react'
 import { SortButton } from "../../types/userTypes"
-import { Link } from 'react-router-dom'
 import toCamelCase from "../../utils/toCamelCase"
 import sortIcon from "../../assets/svg/chevron.svg"
 import sortIconActive from "../../assets/svg/chevron-dec.svg"
-import { useLocation } from 'react-router-dom'
+import { UsersContext } from "../../context"
 import styles from "./SortBtn.module.scss"
 
 interface SortKeyProps { sortKey: SortButton }
 
 const SortBtn:FC<SortKeyProps> = ({ sortKey }) => {
-    const location = useLocation()
-    
-    // Get the current sortKey from URL query parameters
-    const queryParams = new URLSearchParams(location.search)
-    const urlSortKey = queryParams.get('sortKey') || 'firstName'
-    const camelCaseKey = toCamelCase(sortKey)
-    const isActive = urlSortKey === camelCaseKey
 
+    const { state:{ currentSortKey },dispatch } = useContext(UsersContext)
+    const camelCaseKey = toCamelCase(sortKey)
+    const isActive = currentSortKey === camelCaseKey
+    const handleSortClick = ():void=>{
+        dispatch && dispatch({type:"SET_SORTKEY",payload:camelCaseKey})
+    }
+    
     return (
-        <Link
-            className={styles.SortBtn}
-            to={`/?sortKey=${camelCaseKey}`}
-        >
+        <button onClick={handleSortClick} className={styles.SortBtn}>
             <span>{sortKey}</span>
             <img src={isActive? sortIconActive : sortIcon} alt={`sort by ${sortKey}`}/>
-        </Link>
+        </button>
     )
 }
  
