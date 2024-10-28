@@ -1,8 +1,13 @@
 @use '../../styles/tokens.scss' as *;
 
+@keyframes blurIn {
+    from {vbackdrop-filter: blur(0px)}
+    to { backdrop-filter: blur(4px) }
+}
+
 @keyframes fadeIn {
     from {background: rgba(0,0,0,0)}
-    to {background: $modalBG;}
+    to {background: $modalBG}
 }
 
 @keyframes moveY {
@@ -26,6 +31,14 @@
     padding: $appPadding;
     align-items: flex-start;
     animation: fadeIn 1s ease;
+    &:before {
+        content:"";
+        position: fixed;
+        inset: 0px;
+        display: block;
+        backdrop-filter: blur(0px);
+        animation: blurIn 1s ease forwards;
+    }
 }
 
 .Modal {
